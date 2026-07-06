@@ -51,4 +51,9 @@ pipeline {
         success { echo 'Pipeline reussi avec succes !'         }
         failure { echo 'Pipeline echoue -- consultez les logs.' }
     }
+stage('Lint') {
+    steps {
+        bat 'mvn checkstyle:check'
+    }
+}
 }
